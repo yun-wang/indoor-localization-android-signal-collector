@@ -3,6 +3,8 @@ package edu.ncsu.signalstrengthcollector;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.android.gms.maps.model.LatLng;
+
 import android.app.Application;
 import android.content.Context;
 import android.location.Location;
@@ -28,11 +30,13 @@ public class MainApplication extends Application {
 	//ArrayList<Location> wifiAndCellPositionsFloor2 = new ArrayList<Location>();
 	//ArrayList<Location> wifiAndCellPositionsFloor3 = new ArrayList<Location>();
 	
+	ArrayList<LatLng> TapedPositions = new ArrayList<LatLng>();
+	
 	boolean shouldGetGpsPositions = false;
 	//boolean shouldGetGpsPositions2 = false;
 	//boolean shouldGetGpsPositions3 = false;
 	
-	ArrayList<Location> gpsPositionsFloor = new ArrayList<Location>();
+	ArrayList<Location> gpsPositions = new ArrayList<Location>();
 	//ArrayList<Location> gpsPositionsFloor2 = new ArrayList<Location>();
 	//ArrayList<Location> gpsPositionsFloor3 = new ArrayList<Location>();
 	

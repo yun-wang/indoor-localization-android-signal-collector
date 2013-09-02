@@ -13,5 +13,12 @@
  		android:layout_width="match_parent"
  		android:layout_height="match_parent"
  		class="com.google.android.gms.maps.SupportMapFragment"/>
+    
+    <Button android:id="@+id/write_file_button"
+    		android:layout_width="fill_parent"
+    		android:layout_height="wrap_content"
+    		android:layout_alignParentBottom="true"
+    		android:layout_alignParentRight="true"
+    		android:text="@string/save_data" />
 
 </RelativeLayout>
