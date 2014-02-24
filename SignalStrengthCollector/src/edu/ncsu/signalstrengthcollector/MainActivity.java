@@ -93,7 +93,7 @@ public class MainActivity extends FragmentActivity implements OnMapClickListener
             protected void onPostExecute(String response)
             {
                 super.onPostExecute(response);
-                
+                Log.d("sigstr", response);
                 if (response != null)
                 {
                 	JSONObject json = null;
@@ -199,15 +199,15 @@ public class MainActivity extends FragmentActivity implements OnMapClickListener
 
 							ScanResult result = measurements.get(k);
 							// TODO N.C. State access points only
-							if(result.SSID == "ncsu" || result.SSID == "ncsu-guest"){
+							//if(result.SSID == "ncsu" || result.SSID == "ncsu-guest"){
 								String measurementString = "INSERT INTO SIGNAL_STRENGTHS (MAC_ADDRRESS, STRENGTH, " +
 										"L_ID) SELECT '" + result.BSSID + "', " + Integer.toString(result.level) +
 										", LOCATIONS.L_ID FROM LOCATIONS WHERE LOCATIONS.LATITUDE='" + Double.toString(lat) + 
 										"' AND LOCATIONS.LONGITUDE='" + Double.toString(lng) + "';\n";
 
 								out.write(measurementString);
-								Log.d("sigstr", measurementString);
-							}
+								Log.d("sigstr", result.SSID + " " + measurementString);
+							//}
 						}
 		            }
 		            out.close();
@@ -262,7 +262,7 @@ public class MainActivity extends FragmentActivity implements OnMapClickListener
 		}
 		//application.locationManager.requestSingleUpdate(LocationManager.NETWORK_PROVIDER, listener, looper);
 		application.TapedPositions.add(point);
-		map.addMarker(new MarkerOptions().position(point).title(""+point));
+		map.addMarker(new MarkerOptions().position(point));
 	}
 
 	@Override

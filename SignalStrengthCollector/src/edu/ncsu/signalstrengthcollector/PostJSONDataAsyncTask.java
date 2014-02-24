@@ -56,6 +56,7 @@ public class PostJSONDataAsyncTask extends AsyncTask<Object, Void, String>{
             if(jsonObject == null){
                 // response = httpclient.execute(new HttpGet(postURL));
                 responseBody = httpclient.execute(new HttpGet(postURL), responseHandler);
+                //Log.d("sigstr", responseBody);
             }
             // Execute HTTP POST
             else {
@@ -72,7 +73,7 @@ public class PostJSONDataAsyncTask extends AsyncTask<Object, Void, String>{
     
                 // response = httpclient.execute(httppost);
                 responseBody = httpclient.execute(httppost, responseHandler);
-                // Log.d("DEBUG", response);
+                
             }
             
             return responseBody;
